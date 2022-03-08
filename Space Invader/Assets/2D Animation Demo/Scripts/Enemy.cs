@@ -29,31 +29,39 @@ public class Enemy : MonoBehaviour
         
         if (GameObject.Find("Bullet"))
         {
-            Destroy(collider.gameObject);
-            Destroy(gameObject);
-            Debug.Log("enemy destroyed");
+            
             
             if (GameObject.Find("EnemyR"))
             {
-                Score.playerScore += 10;
+                
+                Destroy(collider.gameObject);
                 Destroy(gameObject);
+                Score.playerScore += 10;
             }
             if (GameObject.Find("EnemyG"))
             {
-                Score.playerScore += 20;
+                
+                Destroy(collider.gameObject);
                 Destroy(gameObject);
+                Score.playerScore += 20;
             }
             if (GameObject.Find("EnemyB"))
             {
-                Score.playerScore += 30;
+                
                 Destroy(collider.gameObject);
                 Destroy(gameObject);
+                Score.playerScore += 30;
             }
             if (GameObject.Find("EnemyW"))
             {
-                Score.playerScore += 50;
+                
+                Destroy(collider.gameObject);
                 Destroy(gameObject);
+                Score.playerScore += 50;
             }
+            Destroy(collider.gameObject);
+            Destroy(gameObject);
+            Debug.Log("enemy destroyed");
             
         }
         else if (GameObject.Find("Barricade"))
