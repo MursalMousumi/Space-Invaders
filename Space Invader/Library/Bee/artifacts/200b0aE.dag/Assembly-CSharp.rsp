@@ -342,9 +342,11 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/2D Animation Demo/Scripts/Barricade.cs"
 "Assets/2D Animation Demo/Scripts/Bullet.cs"
 "Assets/2D Animation Demo/Scripts/Enemy.cs"
 "Assets/2D Animation Demo/Scripts/Player.cs"
+"Assets/2D Animation Demo/Scripts/Score.cs"
 -langversion:9.0
 
 /deterministic
