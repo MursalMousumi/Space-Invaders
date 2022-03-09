@@ -15,16 +15,17 @@ public class Score : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
+        playerScore = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = $"Score: {playerScore:0000}" + $"\nHigh Score: {playerHighScore:0000}";
 
-        if (playerHighScore >= playerScore)
+        if (playerHighScore > playerScore)
         {
             playerHighScore = playerScore;
         }
+        scoreText.text = $"Score: {playerScore:0000}" + $"\nHigh Score: {playerHighScore:0000}";
     }
 }
