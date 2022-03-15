@@ -1,1 +1,0 @@
-Temp/ScriptUpdater/325267976/1706953870_Barricade.cs => Assets/2D Animation Demo/Scripts/Barricade.cs

@@ -6,15 +6,17 @@ using TMPro;
 
 public class Enemy : MonoBehaviour
 {
+  private Animator playerAnimator;
+  private static readonly int Explode = Animator.StringToHash("Explode");
     //private Transform enemyHolder;
     //public float speed;
     //public float fireRate = 1f;
 
     //-----------------------------------------------------------------------------
-    private void Start()
-    {
-        
-    }
+    // private void Start()
+    // {
+    //
+    // }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,11 +27,11 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        
             if (GameObject.Find("EnemyR"))
             {
                 Destroy(collider.gameObject);
                 Destroy(gameObject);
+                playerAnimator.SetTrigger(Explode);
                 Score.playerScore += 10;
             }
 
@@ -56,7 +58,7 @@ public class Enemy : MonoBehaviour
             //   Destroy(collider.gameObject);
             //   Destroy(gameObject);
             //   Debug.Log("enemy destroyed");
-    } 
+    }
 }
 
 //white += 50

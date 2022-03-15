@@ -22,16 +22,23 @@ public class Barricade : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (GameObject.Find("Barricade"))
-        {
-            GameObject playerBarricade = GetComponent<Collider>().gameObject;
-            Barricade BarriHealth = playerBase.GetComponent<Barricade>();
-            BarriHealth.health -= 1;
-            //Destroy(gameObject);
-            Destroy(collider.gameObject);
-            Destroy(gameObject);
-        }
+        // todo - trigger death animation
+        Destroy(collision.gameObject); // destroy bullet
+        Debug.Log("Ouch!");
     }
+
+    // private void OnTriggerEnter2D(Collider2D collider)
+    // {
+    //     if (GameObject.Find("Barricade"))
+    //     {
+    //         GameObject playerBarricade = GetComponent<Collider>().gameObject;
+    //         Barricade BarriHealth = playerBase.GetComponent<Barricade>();
+    //         BarriHealth.health -= 1;
+    //         //Destroy(gameObject);
+    //         Destroy(collider.gameObject);
+    //         Destroy(gameObject);
+    //     }
+    // }
 }
