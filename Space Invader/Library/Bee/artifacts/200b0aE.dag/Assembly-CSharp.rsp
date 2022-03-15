@@ -342,6 +342,7 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/2D Animation Demo/Demo/DemoManager.cs"
 "Assets/2D Animation Demo/Scripts/Barricade.cs"
 "Assets/2D Animation Demo/Scripts/Bullet.cs"
 "Assets/2D Animation Demo/Scripts/Enemy.cs"
