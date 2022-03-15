@@ -15,7 +15,15 @@ public class Player : MonoBehaviour
     private Animator playerAnimator;
     private static readonly int Shoot = Animator.StringToHash("Shoot");
 
+    private AudioSource _audioSource;
+    public AudioClip shootSound;
+
     //-----------------------------------------------------------------------------
+    void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+    
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
@@ -27,11 +35,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // todo - trigger a "shoot" on the animator
+            
             playerAnimator.SetTrigger(Shoot);
             GameObject shot = Instantiate(bulletPrefab, shootOffsetTransform.position, Quaternion.identity);
             Debug.Log("Bang!");
 
+            ActivateSound(shootSound);
+            
             Destroy(shot, 3f);
+            
+            
         }
         
         if (Input.GetKey(left))
@@ -44,5 +57,11 @@ public class Player : MonoBehaviour
             Transform transform = GetComponent<Transform>();
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
+    }
+
+    private void ActivateSound(AudioClip soundClip)
+    {
+        _audioSource.clip = soundClip;
+        _audioSource.Play();
     }
 }
